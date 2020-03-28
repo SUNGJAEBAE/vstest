@@ -3,10 +3,10 @@
 
 #include <iostream>
 
-int main()
+int main1()
 {
     std::cout << "Hello World! hello!\n";
-}
+}   
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
