@@ -18,5 +18,13 @@
     <ClCompile Include="scanfile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="seddlf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="self.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
