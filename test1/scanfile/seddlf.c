@@ -1,6 +1,9 @@
 #include "self.h"
-
-int self(int x)
+#include <stdio.h>
+extern int x;
+void self()
 {
-	return x;
+
+	printf("%d", x);
+	return;
 }

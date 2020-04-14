@@ -1,10 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include "self.h"
+int x = 5;
 int main()
 {
-	char line[100];
-	while (fgets(line, 100, stdin))
-		fputs(line, stdout);
-
+	self();
 	return 0;
 }

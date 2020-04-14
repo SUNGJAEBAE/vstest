@@ -1,3 +1,3 @@
 #pragma once
 
-int self(int x);
+void self();
