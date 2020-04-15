@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include "self.h"
 int x = 5;
-int main()
+const static int main()
 {
+	self();
 	self();
 	return 0;
 }
