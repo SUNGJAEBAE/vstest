@@ -6,5 +6,6 @@ const static int main()
 {
 	self();
 	self();
+	self();
 	return 0;
 }
