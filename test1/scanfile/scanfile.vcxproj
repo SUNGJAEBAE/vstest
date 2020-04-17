@@ -139,7 +139,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="scanfile.c" />
-    <ClCompile Include="seddlf.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="self.h" />
