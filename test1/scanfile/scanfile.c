@@ -1,30 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
-int main(int argc, char* argv[])
+
+void printArray(int arr[], int count)    // 매개변수를 포인터로 지정하여 배열을 받음
 {
-	int c;
-	FILE* file = NULL;
-	FILE* file2 = NULL;
+    for (int i = 0; i < count; i++)
+    {
+        printf("%d ", arr[i]);
+    }
 
-	if (argc != 2)
-	{
-		printf("wrong usage"); exit(EXIT_FAILURE);
-	}
-		
-	file = fopen(argv[1], "r");
-	file2 = fopen("test2.txt", "w");
-	if (file == NULL)
-	{
-		printf("wrong usage2");  exit(1);
-	}
-	while ((c = fgetc(file)) != EOF)
-	{
-		fputc(c, stdout);
-		fputc(c, file2);
-	}
-	fclose(file);
-
-	return 0;
+    printf("\n");
 }
 
+int main()
+{
+    int numArr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    printArray(numArr, sizeof(numArr) / sizeof(int));    // 배열과 요소의 개수를 넣음
+
+    return 0;
+}
