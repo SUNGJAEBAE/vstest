@@ -1,21 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <time.h>
 
-void printArray(int arr[], int count)    // 매개변수를 포인터로 지정하여 배열을 받음
+void delay(unsigned int sec)     // 특정 시간(초)만큼 기다리는 함수
 {
-    for (int i = 0; i < count; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-
-    printf("\n");
+    clock_t ticks1 = clock();
+    clock_t ticks2 = ticks1;
+    while ((ticks2 / CLOCKS_PER_SEC - ticks1 / CLOCKS_PER_SEC) < (clock_t)sec)
+        ticks2 = clock();
 }
 
 int main()
 {
-    int numArr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    setvbuf(stdout, NULL, _IOFBF, 10);    // 출력 버퍼의 크기를 10으로 설정
 
-    printArray(numArr, sizeof(numArr) / sizeof(int));    // 배열과 요소의 개수를 넣음
+    printf("Hello, world!\n");
+
+    delay(3);    // 3초간 기다림
 
     return 0;
 }
