@@ -1,18 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-
+// string.h 파일이 필요합니다.
 #include <stdio.h>
-int main()
+void main()
 {
-	double a;
-	int b;
-	scanf("%lf %d", &a, &b);
-	printf("%f\n", a);
-	printf("%d", b);
-	printf("\n");
-	char c;
-	while ((c = getchar()) != '\n')
-		putchar(c);
-
-	return 0;
-
+	printf("asdf");
 }
