@@ -1,17 +1,26 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <tuple>
+#include <deque>
+#include <set>
+#include <map>
+#include <stack>
+#include <queue>
+#include <array>
+#include <string>
+#include <set>
+#include <boost/asio.hpp>
 using namespace std;
-
-int qq(int a, int b)
-{
-	return a + b;
-}
-
 int main()
 {
-	const int a = 10;
-	int arr[a] = { 0, };
+	vector<int> container;
+	for (int i=0;i<10;i++)
+	container.push_back(i);
+	vector<int>::iterator itr=container.begin();
+	while (itr != container.end())
+	{
+		cout << *itr << ' ';
+		++itr;
+	}
+	return 0;
 
 }
