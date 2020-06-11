@@ -1,28 +1,41 @@
-#include "Calc.h"
-Calc::Calc(int value_in)
-{
-	value = value_in;
-}
+#include <iostream>
+#include <string>
+#include <boost/asio.hpp>
 
-Calc& Calc::add(int value_in)
-{
-	value += value_in;
-	return *this;
-}
+using boost::asio::ip::tcp;
 
-Calc& Calc::sub(int value_in)
+int main(int argc, char* argv[])
 {
-	value -= value_in;
-	return *this;
-}
+	try
+	{
+		if (argc != 2)
+		{
+			std::cerr << "usage: client <host>" << std::endl;
+			return 1;
+		}
 
-Calc& Calc::mult(int value_in)
-{
-	value *= value_in;
-	return *this;
-}
+		tcp::iostream stream(argv[1], std::to_string(int(13)));
+		if (!stream)
+		{
+			std::cout << "unable to connect" << stream.error().message() << std::endl;
+			return 1;
+		}
+		std::string message_to_send = "hello from client";
+		while (TRUE) 
+		{
+			std::getline(std::cin, message_to_send);
+			stream << message_to_send;
+			stream << std::endl;
 
-void Calc::print() const
-{
-	std::cout << value << std::endl;
+			std::string line;
+			std::getline(stream, line);
+			std::cout << line << std::endl;
+		}
+		
+	}
+	catch (std::exception& e)
+	{
+		std::cout << "Exeception :" << e.what() << std::endl;
+	}
+	return 0;
 }

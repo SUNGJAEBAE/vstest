@@ -1,17 +1,21 @@
 #include <stdio.h>
-#include <limits.h>
-int pow(int a, int b) {
-	if (b == 0)
-		return 1;
-	else
-		return a * pow(a, b - 1);
+
+int power(int arr[5])
+{
+	int size = sizeof(arr);
+	int ans = 1;
+	printf("size of array: %d", size);
+	for (int i = 0; i < size; i++)
+	{
+		ans *= arr[i];
+	}
+	return ans;
 }
 
 int main()
 {
-
-	int a = 0xFFFF;
-	printf("%A\n", a);
-	printf("%x\n", a);
-	printf("%#X\n", a);
+	int arr[5] = { 1,2,3,4,5 };
+	printf("size of array: %d", sizeof(arr));
+	printf("pow by array: %d", power(arr));
+	return 0;
 }
